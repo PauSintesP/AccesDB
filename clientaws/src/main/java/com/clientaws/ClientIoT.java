@@ -15,7 +15,7 @@ public class ClientIoT {
 
     static final String url = "jdbc:mariadb://192.168.45.1:3306/AccesDB";
     static final String usuario = "123admin"; 
-    static final String contrasena = "P4assw0rd!";
+    static final String contrasena = "P4assw0ord!";
 
     public static void main(String[] args) {
 

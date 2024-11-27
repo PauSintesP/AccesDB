@@ -6,7 +6,7 @@ package com.clientaws;
 
 /**
  *
- * @author david
+ * @author pau
  */
 import com.amazonaws.services.iot.client.AWSIotException;
 import com.amazonaws.services.iot.client.AWSIotMqttClient;
@@ -16,13 +16,12 @@ import com.amazonaws.services.iot.client.sample.sampleUtil.SampleUtil.KeyStorePa
 
 public class DispositiuIot{
 
-    //private static final String FICH_CLAU_PUBLICA = "./client1certs/";
-    private static final String FICH_CLAU_PRIVADA = "C:/Users/antot/Downloads/clientIoT_java/clientIoT/client1certs/client1-private.pem.key";
-    private static final String FICH_CERT_DISP_IOT = "C:/Users/antot/Downloads/clientIoT_java/clientIoT//client1certs/client1-certificate.pem.crt";
-    private static final String ENDPOINT = "a2mzzcez8i1shq-ats.iot.us-east-1.amazonaws.com";
-    //public static final String TOPIC = "iticbcn/espnode01/pub";
-    public static final String TOPIC = "iticbcn/#";
-    public static final String CLIENT_ID = "client1";
+    private static final String FICH_CLAU_PRIVADA = "/home/pau/AccesDB/clientaws/src/main/resources/7d9d92f817d67d995a7157042db027c9ac3a83369629f316e620c9661b2c87e4-private.pem.key";
+    private static final String FICH_CERT_DISP_IOT = "/home/pau/AccesDB/clientaws/src/main/resources/7d9d92f817d67d995a7157042db027c9ac3a83369629f316e620c9661b2c87e4-certificate.pem.crt";
+    private static final String ENDPOINT = "a3jyc2122j8ooj-ats.iot.us-east-1.amazonaws.com";
+
+    public static final String TOPIC = "iticbcn/sub";
+    public static final String CLIENT_ID = "ESP32-RFID";
     public static final AWSIotQos TOPIC_QOS = AWSIotQos.QOS0;
 
     private static AWSIotMqttClient awsIotClient;
