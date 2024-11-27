@@ -1,0 +1,4 @@
+com/clientaws/Main.class
+com/clientaws/MQTTSubscriber.class
+com/clientaws/S3Downloader.class
+com/clientaws/IoTClientSetup.class
