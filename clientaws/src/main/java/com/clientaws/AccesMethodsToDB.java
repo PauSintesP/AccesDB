@@ -10,14 +10,14 @@ import com.amazonaws.services.iot.client.AWSIotMessage;
 public class AccesMethodsToDB {
 
     public void selectAlumnes (Connection con) {
-        String sql = "SELECT * FROM alumne"; // Consulta SQL
+        String sql = "SELECT * FROM ALUMNE"; // Consulta SQL
         
         try (Statement stmt = con.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
         
         while (rs.next()) {
             int id = rs.getInt("IdAlumne");
-            String nombre = rs.getString("NomAlumne");
+            String nombre = rs.getString("Nom");
             System.out.println("ID: " + id + ", Nom: " + nombre);
         }
         
