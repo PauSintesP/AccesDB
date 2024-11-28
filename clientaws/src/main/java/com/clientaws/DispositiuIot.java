@@ -16,8 +16,8 @@ import com.amazonaws.services.iot.client.sample.sampleUtil.SampleUtil.KeyStorePa
 
 public class DispositiuIot{
 
-    private static final String FICH_CLAU_PRIVADA = "/home/pau/AccesDB/clientaws/src/main/resources/7d9d92f817d67d995a7157042db027c9ac3a83369629f316e620c9661b2c87e4-private.pem.key";
-    private static final String FICH_CERT_DISP_IOT = "/home/pau/AccesDB/clientaws/src/main/resources/7d9d92f817d67d995a7157042db027c9ac3a83369629f316e620c9661b2c87e4-certificate.pem.crt";
+    private static final String FICH_CLAU_PRIVADA = "clientaws/src/main/resources/7d9d92f817d67d995a7157042db027c9ac3a83369629f316e620c9661b2c87e4-private.pem.key";
+    private static final String FICH_CERT_DISP_IOT = "clientaws/src/main/resources/7d9d92f817d67d995a7157042db027c9ac3a83369629f316e620c9661b2c87e4-certificate.pem.crt";
     private static final String ENDPOINT = "a3jyc2122j8ooj-ats.iot.us-east-1.amazonaws.com";
 
     public static final String TOPIC = "iticbcn/sub";
