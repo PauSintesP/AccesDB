@@ -16,12 +16,12 @@ import com.amazonaws.services.iot.client.sample.sampleUtil.SampleUtil.KeyStorePa
 
 public class DispositiuIot{
 
-    private static final String FICH_CLAU_PRIVADA = "clientaws/src/main/resources/7d9d92f817d67d995a7157042db027c9ac3a83369629f316e620c9661b2c87e4-private.pem.key";
-    private static final String FICH_CERT_DISP_IOT = "clientaws/src/main/resources/7d9d92f817d67d995a7157042db027c9ac3a83369629f316e620c9661b2c87e4-certificate.pem.crt";
+    private static final String FICH_CLAU_PRIVADA = "clientaws\\src\\main\\resources\\6149b8930f8fbd530d8afdb87b9cc49868b1aff6011b23862c47c535ff4a1368-private.pem.key";
+    private static final String FICH_CERT_DISP_IOT = "clientaws\\src\\main\\resources\\6149b8930f8fbd530d8afdb87b9cc49868b1aff6011b23862c47c535ff4a1368-certificate.pem.crt";
     private static final String ENDPOINT = "a3jyc2122j8ooj-ats.iot.us-east-1.amazonaws.com";
 
     public static final String TOPIC = "iticbcn/sub";
-    public static final String CLIENT_ID = "ESP32-RFID";
+    public static final String CLIENT_ID = "BBDD-Connect";
     public static final AWSIotQos TOPIC_QOS = AWSIotQos.QOS0;
 
     private static AWSIotMqttClient awsIotClient;
