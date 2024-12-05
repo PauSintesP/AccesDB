@@ -1,24 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.clientaws;
 
 import com.amazonaws.services.iot.client.AWSIotMessage;
 import com.amazonaws.services.iot.client.AWSIotQos;
 import com.amazonaws.services.iot.client.AWSIotTopic;
 
-/**
- *
- * @author david
- */
-public class TopicIoT  extends AWSIotTopic {
-    public TopicIoT(String topic,AWSIotQos qos) {
-        super(topic,qos);
+import java.sql.Connection;
+
+public class TopicIoT extends AWSIotTopic {
+
+    private final AccesMethodsToDB dbAccess;
+    private final Connection dbConnection;
+
+    public TopicIoT(String topic, AWSIotQos qos, AccesMethodsToDB dbAccess, Connection dbConnection) {
+        super(topic, qos);
+        this.dbAccess = dbAccess;
+        this.dbConnection = dbConnection;
     }
 
     @Override
     public void onMessage(AWSIotMessage message) {
-        System.out.println(System.currentTimeMillis() + ": <<< " + message.getStringPayload());
+        try {
+            System.out.println("Mensaje recibido: " + message.getStringPayload());
+            
+            // Extraer UID del mensaje
+            String uid = ClientIoT.extractUid(message.getStringPayload());
+            if (uid != null && !uid.isEmpty()) {
+                dbAccess.insertRegistry(dbConnection, uid);
+            } else {
+                System.err.println("Mensaje inválido, UID no encontrado: " + message.getStringPayload());
+            }
+        } catch (Exception e) {
+            System.err.println("Error al procesar el mensaje IoT: " + e.getMessage());
+        }
     }
 }
